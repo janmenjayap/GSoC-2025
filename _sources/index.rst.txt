@@ -14,7 +14,7 @@ Content
 --------
 
 * :ref:`Home <home>`
-* :ref:`Overview <abstract>`
+* :ref:`Abstract <abstract>`
 
 .. toctree::
    :maxdepth: 2
