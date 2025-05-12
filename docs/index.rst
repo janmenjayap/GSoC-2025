@@ -14,10 +14,10 @@ Content
 --------
 
 * :ref:`Home <home>`
-* :ref:`Overview <overview>`
+* :ref:`Overview <abstract>`
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :hidden:
 
    abstract.rst
