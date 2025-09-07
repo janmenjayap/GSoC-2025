@@ -16,6 +16,7 @@ Content
 * :ref:`Home <home>`
 * :ref:`Overview <overview>`
 * :ref:`Abstract <abstract>`
+* :ref:`Objective <objective>`
 
 .. toctree::
    :maxdepth: 2
@@ -23,3 +24,4 @@ Content
 
    overview.rst
    abstract.rst
+   objective.rst
