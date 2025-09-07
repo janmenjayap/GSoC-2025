@@ -26,7 +26,7 @@ the odd-set constraint.
 
 Overtime, there have been several attempts in order to effectively compute the maximum
 cardinality matching in general undirected graphs. In 1980, Silvio Micali and Vijay V. Vazirani
-presented an algorithm [2]_ that calculates a maximum cardinality matching in
+presented an algorithm [3]_ that calculates a maximum cardinality matching in
 :math:`\mathcal{O}(|E| \cdot \sqrt{V})` time. It is worth noting that the Micali-Vazirani
 algorithm, by far, offers the best theoretical runtime known for the concerned problem.
 Despite this, there are no publicly available sagemath implementations. It is for this
@@ -39,8 +39,8 @@ the :math:`mathcal{O}(|E| \cdot \sqrt{|V|})` Micali-Vazirani algorithm for maxim
 matching in undirected graphs in SageMath, and to make all of that available freely to
 students, educators as well as researchers all across the world.
 
-This implementation draws upon the work of Prof. Vazirani [3]_ and the study by Michael Huang
-and Clifford Stein [4]_. In addition, a presentation [5]_ delivered by Prof. Vazirani at the Simons
+This implementation draws upon the work of Prof. Vazirani [4]_ and the study by Michael Huang
+and Clifford Stein [2]_. In addition, a presentation [5]_ delivered by Prof. Vazirani at the Simons
 Institute — *A Theory of Alternating Paths and Blossoms, from the Perspective of Minimum Length*
 — was consulted to obtain a more comprehensive understanding of the algorithm.
 
@@ -53,18 +53,18 @@ Institute — *A Theory of Alternating Paths and Blossoms, from the Perspective 
 .. [1] Jack Edmonds. *Paths, Trees, and Flowers*. Canadian Journal of Mathematics.
        Canadian Journal of Mathematics. 17:449–467, 1965. doi:10.4153/CJM-1965-045-4.
 
-.. [2] Silvio Micali and Vijay V. Vazirani. *An \( \mathcal{O}(\sqrt{|V|}\cdot|E|) \)
+.. [2] Michael Huang and Clifford Stein. *Extending Search Phases in the Micali-Vazirani
+       Algorithm.* Proceedings of the 16th International Symposium on Experimental Algorithms
+       (SEA 2017) (Vol. 75, pp. 10:1–10:19). Dagstuhl, Germany: Schloss Dagstuhl–Leibniz-Zentrum
+       für Informatik. :doi:10.4230/LIPIcs.SEA.2017.10. URN urn:nbn:de:0030-drops-76141.
+
+.. [3] Silvio Micali and Vijay V. Vazirani. *An \( \mathcal{O}(\sqrt{|V|}\cdot|E|) \)
        algorithm for finding maximum matching in general graphs*. Proceedings of the
        21st Annual Symposium on Foundations of Computer Science (SFCS 1980), 1980. 17–27,
        doi:10.1109/SFCS.1980.12, ISBN 0-8186-1021-4.
 
-.. [3] Vijay V. Vazirani. *A Proof of the MV Matching Algorithm*. 2020. arXiv preprint,
+.. [4] Vijay V. Vazirani. *A Proof of the MV Matching Algorithm*. 2020. arXiv preprint,
        arXiv:2012.03582 [cs.DS].
-
-.. [4] Michael Huang and Clifford Stein. *Extending Search Phases in the Micali-Vazirani
-       Algorithm.* Proceedings of the 16th International Symposium on Experimental Algorithms
-       (SEA 2017) (Vol. 75, pp. 10:1–10:19). Dagstuhl, Germany: Schloss Dagstuhl–Leibniz-Zentrum
-       für Informatik. :doi:10.4230/LIPIcs.SEA.2017.10. URN urn:nbn:de:0030-drops-76141.
 
 .. [5] Vijay V. Vazirani. *A Theory of Alternating Paths and Blossoms, from the Perspective of
        Minimum Length.* Lecture. Simons Institute for the Theory of Computing. Wednesday,
