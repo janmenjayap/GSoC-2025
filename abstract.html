@@ -19,6 +19,7 @@
       <script src="_static/documentation_options.js?v=5929fcd5"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
       <script src="_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
     <script src="_static/js/theme.js"></script>
@@ -80,7 +81,75 @@
              
   <section id="abstract">
 <span id="id1"></span><h1>Abstract<a class="headerlink" href="#abstract" title="Link to this heading"></a></h1>
-</section>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<hr/><p>Matchings and perfect matchings have received considerable attention in graph
+theory as well as in other related domains (such as, but not limited to,
+algorithms and optimization). There still remain many open problems — such as
+<a class="reference external" href="https://en.wikipedia.org/wiki/Barnette%27s_conjecture">Barnette’s conjecture</a>,
+<a class="reference external" href="http://garden.irmacs.sfu.ca/op/the_berge_fulkerson_conjecture">Berge-Fulkerson conjecture</a>,
+and so on — due to which it continues to remain an active area of research.
+At the heart of all this research lies the bottleneck of finding a maximum cardinality
+matching in undirected graphs. Edmonds’ Blossom algorithm <a class="footnote-reference brackets" href="#id7" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, introduced in 1965,
+was groundbreaking in providing the first polynomial-time solution by effectively
+handling odd-length cycles (blossoms) in <span class="math notranslate nohighlight">\(\mathcal{O}(|E|\cdot|V|^2)\)</span> time.
+There are algorithms, with the Linear Programming backbone, that exploit the
+properties of the matching polytope for computing a maximum cardinality matching.
+For nonbipartite graphs, it either suffers from nontight Linear Programming relaxation,
+leading to fractional solutions or otherwise the inclusion of exponential numbers of
+the odd-set constraint.</p>
+<p>Overtime, there have been several attempts in order to effectively compute the maximum
+cardinality matching in general undirected graphs. In 1980, Silvio Micali and Vijay V. Vazirani
+presented an algorithm <a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> that calculates a maximum cardinality matching in
+<span class="math notranslate nohighlight">\(\mathcal{O}(|E| \cdot \sqrt{V})\)</span> time. It is worth noting that the Micali-Vazirani
+algorithm, by far, offers the best theoretical runtime known for the concerned problem.
+Despite this, there are no publicly available sagemath implementations. It is for this
+reason that researchers in this area are at a loss, and are required to implement this
+by themselves. Currently, in SageMath, for general undirected graphs, the method
+<a class="reference external" href="https://doc.sagemath.org/html/en/reference/graphs/sage/graphs/graph.html#sage.graphs.graph.Graph.matching">matching()</a>,
+computes a maximum cardinality matching in <span class="math notranslate nohighlight">\(\mathcal{O}(|E|\cdot|V|^2)\)</span> either through
+Edmonds’ algorithm or by using Linear Programming formulation. Ergo, we propose to implement
+the <span class="math notranslate nohighlight">\(mathcal{O}(|E| \cdot \sqrt{|V|})\)</span> Micali-Vazirani algorithm for maximum cardinality
+matching in undirected graphs in SageMath, and to make all of that available freely to
+students, educators as well as researchers all across the world.</p>
+<p>This implementation draws upon the work of Prof. Vazirani <a class="footnote-reference brackets" href="#id9" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> and the study by Michael Huang
+and Clifford Stein <a class="footnote-reference brackets" href="#id10" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. In addition, a presentation <a class="footnote-reference brackets" href="#id11" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> delivered by Prof. Vazirani at the Simons
+Institute — <em>A Theory of Alternating Paths and Blossoms, from the Perspective of Minimum Length</em>
+— was consulted to obtain a more comprehensive understanding of the algorithm.</p>
+<hr/>
+<b> References </b>
+<hr/><aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Jack Edmonds. <em>Paths, Trees, and Flowers</em>. Canadian Journal of Mathematics.
+Canadian Journal of Mathematics. 17:449–467, 1965. doi:10.4153/CJM-1965-045-4.</p>
+</aside>
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>Silvio Micali and Vijay V. Vazirani. <em>An ( mathcal{O}(sqrt{|V|}cdot|E|) )
+algorithm for finding maximum matching in general graphs</em>. Proceedings of the
+21st Annual Symposium on Foundations of Computer Science (SFCS 1980), 1980. 17–27,
+doi:10.1109/SFCS.1980.12, ISBN 0-8186-1021-4.</p>
+</aside>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>Vijay V. Vazirani. <em>A Proof of the MV Matching Algorithm</em>. 2020. arXiv preprint,
+arXiv:2012.03582 [cs.DS].</p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
+<p>Michael Huang and Clifford Stein. <em>Extending Search Phases in the Micali-Vazirani
+Algorithm.</em> Proceedings of the 16th International Symposium on Experimental Algorithms
+(SEA 2017) (Vol. 75, pp. 10:1–10:19). Dagstuhl, Germany: Schloss Dagstuhl–Leibniz-Zentrum
+für Informatik. :doi:10.4230/LIPIcs.SEA.2017.10. URN urn:nbn:de:0030-drops-76141.</p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
+<p>Vijay V. Vazirani. <em>A Theory of Alternating Paths and Blossoms, from the Perspective of
+Minimum Length.</em> Lecture. Simons Institute for the Theory of Computing. Wednesday,
+October 4, 2023. 02: 00 – 04: 30 PM PT. <a class="reference external" href="https://simons.berkeley.edu/events/theory-alternating-paths-blossoms-perspective-minimum-length">https://simons.berkeley.edu/events/theory-alternating-paths-blossoms-perspective-minimum-length</a>.</p>
+</aside>
+</aside>
+<hr/></section>
 
 
            </div>
